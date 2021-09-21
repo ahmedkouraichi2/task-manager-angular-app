@@ -1,0 +1,85 @@
+.row-main{
+  display:flex;
+  margin-top: 30px;
+
+}
+.add{
+  background-color: white;
+  width: 100%;
+  height: 100vh;
+  padding-left: 5px;
+}
+.task{
+  background: white;
+  width: 100%;
+  height: 100vh;
+  margin-left: 50px;
+}
+select,input,textarea{
+
+  margin-top: 15px;
+
+
+}
+textarea{
+  border: 1px solid #ced4da;
+  width:106%;
+}
+
+
+
+
+.box{
+  width: 600px;
+  height: 300px;
+  background-color: white;
+  box-shadow: 30px;
+  border-radius: 3%;
+  border:black 0.1px solid;
+  box-shadow: 4px 4px 4px  3px #ced4da;
+  margin-left: 20px;
+  margin-top:10px;
+
+}
+
+.col-noir{
+  width:100%;
+  height: 20%;
+  background-color:#ced4da;
+  border-radius: 6% 6% 0 0;
+
+
+}
+
+.col-button{
+  display:flex;
+  justify-content: center;
+
+
+}
+.buttonsucces{
+  color: green;
+  width:100px;
+  margin-top: 10px;
+  height: 55px;
+  width:110px;
+
+}
+.colDrop{
+  display: flex;
+
+}
+.btn-dropdown{
+  display: flex;
+
+
+
+}
+.btn{
+  justify-content: right;
+    margin-left: 180px;
+}
+.Logo p {
+  font-size: 10px;
+
+}
