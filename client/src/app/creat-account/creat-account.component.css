@@ -1,0 +1,52 @@
+
+
+.grid{
+  background-color:#eeeeee;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.center{
+  background-color:white;
+
+   border:2px black solid ;
+
+
+
+
+}
+.center {
+  margin-left:10%;
+  margin-right:10%;
+  margin-top:5%;
+
+}
+.center  input{
+  border-radius:8px;
+
+}
+
+.center label{
+  margin-left:7%;
+  text-decoration:uppercase;
+  font-size:blod;
+
+}
+
+.buttonSumbit{
+  border-radius: 30px;
+  margin-top:5%;
+  margin-left:28%;
+  justify-content:center;
+
+
+
+
+
+
+}
+h1{
+  text-align: center;
+}

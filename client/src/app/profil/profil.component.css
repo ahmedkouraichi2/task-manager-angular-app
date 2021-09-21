@@ -1,0 +1,30 @@
+
+.main-container{
+  height: 100vh;
+  background-color: cornsilk;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.row-main{
+  background-color: white;
+  width: 70%;
+  height: 60%;
+ align-items: center;
+ align-items: center;
+ border-radius: 5%;
+ padding:5px;
+
+}
+.ligne1{
+  display: flex;
+  border:solid  black 1px;
+  height: 70px;
+  border-radius: 5%;
+  margin-top: 5px;
+  padding-right:15px;
+  padding-left: 15px;
+
+}
+
+
