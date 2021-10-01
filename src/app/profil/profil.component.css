@@ -1,31 +1,37 @@
-
+p{
+  text-align: center;
+  font-weight:bold;
+}
 .main-container{
   height: 100vh;
-  background-color:white;
+  background-color:honeydew;
   display: flex;
-  justify-content: center;
+ justify-content: center;
   align-items: center;
 }
+
+
 .row-main{
- /*  background-color: white; */
+   background-color: white;
   width: 70%;
   height: 60%;
  align-items: center;
  align-items: center;
- border-radius: 5%;
+ border-radius: 1%;
  padding:5px;
+ box-shadow: 14px 14px 14px  13px #ced4da;
 
 }
 .ligne1{
   display: flex;
  /*  border:solid  black 1px; */
   height: 70px;
-  border-radius: 2%;
+/*   border-radius: 2% black 0.1px; */
   margin-top: 10px;
-  padding-right:15px;
-  padding-left: 15px;
-  background-color: white;
-  box-shadow: 4px 4px 4px  3px #ced4da;
+ /*  padding-right:15px;
+  padding-left: 15px; */
+  /* background-color: white; */
+/*    */
 
 
 }
