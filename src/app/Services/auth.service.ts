@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class AuthService {
 token:any;
   constructor() {
-    this.token=localStorage.getItem('token');
+     this.token = localStorage.getItem('token');
   }
 
   setToken(token :string){
@@ -17,7 +17,7 @@ token:any;
   getToken(){
     return this.token;
   }
-  effaceToken(){
+  deleteToken(){
     localStorage.removeItem('token')
    this.token=null;
   }

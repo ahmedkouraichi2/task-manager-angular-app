@@ -1,4 +1,5 @@
-import { HttpClient } from '@angular/common/http';
+import { AuthService } from './auth.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -6,17 +7,25 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private  authService: AuthService) { }
 
   getUsers(){
      return this.http.get('https://todo-manager-nest-api.herokuapp.com/user')
   }
+  getConnectUser() {
+
+    const headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.authService.getToken());
+    return this.http.get('https://todo-manager-nest-api.herokuapp.com', { headers: headers })
+}
+ userLogin(userName:string,password:string){
+    return this.http.post('https://todo-manager-nest-api.herokuapp.com/user/login',{username:userName,password:password})
+ }
   getUser(userId:string){
     return this.http.get('https://todo-manager-nest-api.herokuapp.com/user'+userId)
   }
 
   addUser(userName:string,password:string,name:string,access:boolean){
-    return this.http.post('https://todo-manager-nest-api.herokuapp.com/user',{userName:userName,password:password,name:name,access:access})
+    return this.http.post('https://todo-manager-nest-api.herokuapp.com/user',{userName:userName,password:password,name:name,access:access},)
 
   }
   deleteUser(userId:string){

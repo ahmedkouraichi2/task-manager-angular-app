@@ -7,13 +7,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 exports.__esModule = true;
 exports.UserService = void 0;
+var http_1 = require("@angular/common/http");
 var core_1 = require("@angular/core");
 var UserService = /** @class */ (function () {
-    function UserService(http) {
+    function UserService(http, authService) {
         this.http = http;
+        this.authService = authService;
     }
     UserService.prototype.getUsers = function () {
         return this.http.get('https://todo-manager-nest-api.herokuapp.com/user');
+    };
+    UserService.prototype.getConnectUser = function () {
+        var headers = new http_1.HttpHeaders().set('Authorization', 'Bearer ' + this.authService.getToken());
+        return this.http.get('https://todo-manager-nest-api.herokuapp.com', { headers: headers });
+    };
+    UserService.prototype.userLogin = function (userName, password) {
+        return this.http.post('https://todo-manager-nest-api.herokuapp.com/user/login', { username: userName, password: password });
     };
     UserService.prototype.getUser = function (userId) {
         return this.http.get('https://todo-manager-nest-api.herokuapp.com/user' + userId);
