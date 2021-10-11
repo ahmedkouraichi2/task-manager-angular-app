@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from './../Services/auth.service';
+import { UserService } from './../Services/user.service';
+import { TodoService } from './../Services/todo.service';
+import { RouterModule, Routes } from '@angular/router'
+
 
 @Component({
   selector: 'app-home',
@@ -6,19 +11,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  user :string;
-  users:string[];
-  selectedUser:string;
-  description:string;
-  editTitle:string;
-  editDescription:string;
+ todos:any;
+ title:string;
+ description:string;
+ toEditId:string;
+ editDescription:string;
+ editTitle:string;
+ users:any;
+ selectedUser:string;
 
-  constructor() { }
+  constructor( private authService : AuthService, private todoService :TodoService) { }
 
-  ngOnInit(): void {
+
+  ngOnInit(){
+ 
   }
-  ok(){
-    console.log('todo')
-  }
+ 
 
 }
+
+

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../Services/user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,17 +7,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  User:string="Ahmed";
-  connected=false;
+  user:any;
+  connected:boolean;
 
-  constructor() { }
+  constructor(private userService:UserService) {
+    //initialisation
+    this.connected=false;
+    //ecoute sur le changement de l'utilisatrur courant
+    this.userService.connectedUser.subscribe((newUser:any)=>{
+      if(newUser){
+        this.connected=true;
+        this.user=newUser;
+        //test
+      }
+      })
+
+  }
 
   ngOnInit(): void {
   }
 
-  connection(){
-    this.connected=true;
-  }
+
 
 }
 

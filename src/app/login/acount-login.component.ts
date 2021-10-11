@@ -1,6 +1,7 @@
 import { AuthService } from './../Services/auth.service';
 import { UserService } from './../Services/user.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-acount-login',
@@ -10,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class AcountLoginComponent implements OnInit {
   userName:string;
   password:string;
-  constructor(private userService:UserService, private authService:AuthService) { }
+  constructor(private userService:UserService, private authService:AuthService,private router :Router) { }
 
   ngOnInit(): void {
   }
@@ -19,9 +20,17 @@ export class AcountLoginComponent implements OnInit {
 
     this.userService.userLogin(this.userName,this.password)
     .subscribe((res:any)=>{
-       console.log(res.access_token)
-       this.authService.setToken(res.access_token)
-        this.authService.setToken(res)
+      //applle set token in local storage
+       this.authService.setToken(res.access_token);
+       //elle va routourner l utlisateur courant a partir du Token qui est dans authService
+       this.userService.getConnectUser()
+       .subscribe((user:any)=>{
+         console.log(user)
+         //affecte l'utlisateur retourner par le back end au utlisatur courrant de l'application
+         this.userService.connectUser(user)
+         this.router.navigate(['/home'] )
+
+       })
 
     })
   }

@@ -9,14 +9,21 @@ exports.__esModule = true;
 exports.NavbarComponent = void 0;
 var core_1 = require("@angular/core");
 var NavbarComponent = /** @class */ (function () {
-    function NavbarComponent() {
-        this.User = "Ahmed";
+    function NavbarComponent(userService) {
+        var _this = this;
+        this.userService = userService;
+        //initialisation
         this.connected = false;
+        //ecoute sur le changement de l'utilisatrur courant
+        this.userService.connectedUser.subscribe(function (newUser) {
+            if (newUser) {
+                _this.connected = true;
+                _this.user = newUser;
+                //test
+            }
+        });
     }
     NavbarComponent.prototype.ngOnInit = function () {
-    };
-    NavbarComponent.prototype.connection = function () {
-        this.connected = true;
     };
     NavbarComponent = __decorate([
         core_1.Component({
